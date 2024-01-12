@@ -81,6 +81,11 @@ const Hero = () => {
               alt='fitness hub application image'
               className='main-img'
             />
+            <img
+              src={swirlingArrow}
+              alt='swirling arrow'
+              className='swirling-arrow'
+            />
             <FloatingInfo
               icon={signalIcon}
               textColor='#FF7917'
@@ -98,17 +103,15 @@ const Hero = () => {
               1250+ personal traineers
             </FloatingInfo>
           </div>
-          <img
-            src={swirlingArrow}
-            alt='swirling arrow'
-            className='swirling-arrow'
-          />
         </div>
         <button className='arrow-down-btn'>
           <img src={arrowDownIcon} alt='arrow down' />
         </button>
       </div>
-      <div className='download'></div>
+      <div className='download'>
+        <div className='download-info'></div>
+        <div className='download-app'></div>
+      </div>
     </Section>
   );
 };

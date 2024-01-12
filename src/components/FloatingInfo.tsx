@@ -41,8 +41,8 @@ const Wrapper = styled.div`
   .icon-container {
     display: grid;
     place-items: center;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: clamp(0.5rem, 2.5rem, 2.5rem);
+    height: clamp(0.5rem, 2.5rem, 2.5rem);
     border-radius: 50%;
     background-color: #68dbff;
 
