@@ -21,4 +21,12 @@ const Wrapper = styled.button`
   font-size: 0.9375rem;
   font-weight: 600;
   letter-spacing: 0.00469rem;
+  cursor: pointer;
+  transition: var(--transition);
+
+  &:hover {
+    color: var(--clr-primary);
+    background: #fff;
+    box-shadow: inset 0 0 0 1px var(--clr-primary);
+  }
 `;

@@ -45,6 +45,7 @@ const Nav = styled.nav`
       display: flex;
       align-items: center;
       gap: 1.0625rem;
+      text-decoration: none;
 
       img {
         width: 2.125rem;

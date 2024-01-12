@@ -29,6 +29,7 @@
   /* ------------fonts---------- */
   --font-primary: 'Clash Display', sans-serif;
   --font-secondary: 'Gilroy', sans-serif;
+  --font-1: 'Inter', sans-serif;
 
   /* font sizes */
   --fs-xs: 0.75rem; /* 12px */
@@ -145,7 +146,7 @@ svg {
 }
 
 p {
-  color: var(--clr-gray-5);
+  color: var(--clr-gray-9);
 }
 /* Utility classes */
 .text-xs {
