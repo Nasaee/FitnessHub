@@ -9,9 +9,10 @@ import swirlingArrow from '../assets/images/hero-image/swirling-arrow.svg';
 import FloatingInfo from './FloatingInfo';
 import userIcon from '../assets/images/hero-image/user.svg';
 import signalIcon from '../assets/images/hero-image/signal.svg';
+import DownloadDetail from './DownloadDetail';
+import DownloadLink from './DownloadLink';
 
 const Hero = () => {
-  console.log(typeof swirlingArrow);
   return (
     <Section>
       <div className='hero-header'>
@@ -34,12 +35,16 @@ const Hero = () => {
             only five centuries,
           </p>
           <div className='store'>
-            <img
-              src={playStore}
-              alt='google play store'
-              className='play-store'
-            />
-            <img src={appStore} alt='apple store' className='app-store' />
+            <a href='#'>
+              <img
+                src={playStore}
+                alt='google play store'
+                className='play-store'
+              />
+            </a>
+            <a href='#'>
+              <img src={appStore} alt='apple store' className='app-store' />
+            </a>
           </div>
           <div className='user-constainer'>
             <ul>
@@ -108,9 +113,37 @@ const Hero = () => {
           <img src={arrowDownIcon} alt='arrow down' />
         </button>
       </div>
+      {/* bottom */}
       <div className='download'>
-        <div className='download-info'></div>
-        <div className='download-app'></div>
+        <div className='download-info'>
+          <h2>
+            Download Our <br />
+            <span>Fitness App</span> Today!
+          </h2>
+          <p className='download-description'>
+            Lorem Ipsum has been the industry's standard dummy text ever since
+            the 1500s, when an unknown printer took
+          </p>
+          <p className='download-description last'>
+            Lorem Ipsum has been the industry's standard dummy text ever since
+            the 1500s, when an unknown printer took
+          </p>
+          <div className='detail'>
+            <DownloadDetail
+              headerText='5 Million+'
+              subHeaderText='Worldwide Active Users'
+            />
+            <DownloadDetail headerText='1250+' subHeaderText='Trainer' />
+            <DownloadDetail headerText='750+' subHeaderText='Workout' />
+          </div>
+        </div>
+        <div className='download-app'>
+          <DownloadLink headerText='For iOS' subHeaderText='iOS 15.6 +' />
+          <DownloadLink
+            headerText='For Android'
+            subHeaderText='Android 8.6 +'
+          />
+        </div>
       </div>
     </Section>
   );
@@ -221,6 +254,7 @@ const Section = styled.section`
           & li:last-child {
             transform: translateX(-25px);
             border: 1px dotted rgba(0, 0, 0, 0.2);
+            cursor: pointer;
           }
         }
 
@@ -300,6 +334,46 @@ const Section = styled.section`
         width: 2.875rem;
         height: 2.875rem;
       }
+    }
+  }
+
+  .download {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2.34rem;
+
+    .download-info {
+      padding-right: 2.34rem;
+      h2 {
+        color: #000;
+        font-size: 1.5rem;
+        font-weight: 500;
+
+        & span {
+          color: var(--clr-primary);
+        }
+      }
+
+      p.download-description {
+        padding: 0.26rem 0;
+      }
+
+      p.last {
+        margin-bottom: 2.44rem;
+      }
+
+      .detail {
+        display: flex;
+        padding: 0.625rem 0rem;
+        align-items: flex-start;
+        gap: 4.375rem;
+      }
+    }
+
+    div.download-app {
+      justify-self: end;
+      display: flex;
+      gap: 6.25rem;
     }
   }
 `;
