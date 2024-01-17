@@ -3,12 +3,19 @@
   src: url('./assets/font/ClashDisplay-Regular.otf') format('opentype');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 @font-face {
   font-family: 'Gilroy';
   src: url('./assets/font/Gilroy.otf');
 }
 
 :root {
+  /* ------------fonts---------- */
+  --font-primary: 'Clash Display', sans-serif;
+  --font-secondary: 'Gilroy', sans-serif;
+  --font-1: 'Inter', sans-serif;
+  --font-2: 'DM Sans', sans-serif;
   /* ------------colors---------- */
 
   /* primary */
@@ -25,11 +32,6 @@
   --clr-gray-8: #495057;
   --clr-gray-9: #343a40;
   --clr-gray-10: #212529;
-
-  /* ------------fonts---------- */
-  --font-primary: 'Clash Display', sans-serif;
-  --font-secondary: 'Gilroy', sans-serif;
-  --font-1: 'Inter', sans-serif;
 
   /* font sizes */
   --fs-xs: 0.75rem; /* 12px */

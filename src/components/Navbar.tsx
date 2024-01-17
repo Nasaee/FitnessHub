@@ -2,8 +2,12 @@ import styled from 'styled-components';
 import logo from '../assets/images/Logo.svg';
 import { navLinks } from '../utils';
 import Button from './Button';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { GrClose } from 'react-icons/gr';
+import { useState } from 'react';
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   return (
     <Nav>
       <div className='nav'>
@@ -26,6 +30,23 @@ const Navbar = () => {
             })}
           </ul>
           <Button>Get the App</Button>
+        </div>
+        <div className='menu-container'>
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <GrClose /> : <GiHamburgerMenu />}
+          </button>
+          <ul>
+            {navLinks.map((link) => {
+              const { href, name } = link;
+              return (
+                <li key={name}>
+                  <a href={href} key={name}>
+                    {name}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </Nav>
@@ -91,6 +112,46 @@ const Nav = styled.nav`
             color: var(--clr-primary);
           }
         }
+      }
+    }
+
+    .menu-container {
+      display: none;
+      position: relative;
+
+      & button {
+        width: 2rem;
+        height: 2rem;
+        border: transparent;
+        outline: none;
+        background-color: transparent;
+        transition: 0.2s ease-in-out;
+
+        & svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      & button:hover {
+        color: var(--clr-primary);
+      }
+
+      & ul {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+    }
+
+    @media (max-width: 1040px) {
+      .nav-list-container {
+        display: none;
+      }
+
+      .menu-container {
+        display: block;
       }
     }
   }

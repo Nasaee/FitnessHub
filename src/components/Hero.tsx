@@ -14,7 +14,7 @@ import DownloadLink from './DownloadLink';
 
 const Hero = () => {
   return (
-    <Section>
+    <Section id='home'>
       <div className='hero-header'>
         {/* Left Side */}
         <img src={heroBg} alt='background' className='background' />
@@ -373,7 +373,25 @@ const Section = styled.section`
     div.download-app {
       justify-self: end;
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 6.25rem;
+    }
+  }
+
+  @media (max-width: 867px) {
+    .hero-header {
+      grid-template-columns: 1fr;
+    }
+
+    .download {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 474px) {
+    .detail {
+      column-gap: 2rem !important;
     }
   }
 `;

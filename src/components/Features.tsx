@@ -4,7 +4,7 @@ import { features } from '../utils';
 
 const Features = () => {
   return (
-    <Section>
+    <Section id='features'>
       <div className='features'>
         <SectionTitle
           titleHeader='Benefits of Fitness App'
