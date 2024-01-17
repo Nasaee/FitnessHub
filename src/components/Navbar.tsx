@@ -31,23 +31,27 @@ const Navbar = () => {
           </ul>
           <Button>Get the App</Button>
         </div>
-        <div className='menu-container'>
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <GrClose /> : <GiHamburgerMenu />}
-          </button>
-          <ul>
-            {navLinks.map((link) => {
-              const { href, name } = link;
-              return (
-                <li key={name}>
-                  <a href={href} key={name}>
-                    {name}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+
+        <button className='menu' onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          {isMenuOpen ? <GrClose /> : <GiHamburgerMenu />}
+        </button>
+        {isMenuOpen && (
+          <div className='menu-list'>
+            <ul>
+              {navLinks.map((link) => {
+                const { href, name } = link;
+                return (
+                  <li key={name} onClick={() => setIsMenuOpen(false)}>
+                    <a href={href} key={name}>
+                      {name}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+            <Button>Get the App</Button>
+          </div>
+        )}
       </div>
     </Nav>
   );
@@ -61,6 +65,7 @@ const Nav = styled.nav`
     justify-content: space-between;
     padding: 1.19rem 2.12rem;
     height: var(--nav-height);
+    position: relative;
 
     .icon-constainer {
       display: flex;
@@ -115,33 +120,62 @@ const Nav = styled.nav`
       }
     }
 
-    .menu-container {
-      display: none;
-      position: relative;
+    button.menu {
+      width: 2rem;
+      height: 2rem;
+      border: transparent;
+      outline: none;
+      background-color: transparent;
+      transition: 0.2s ease-in-out;
 
-      & button {
-        width: 2rem;
-        height: 2rem;
-        border: transparent;
-        outline: none;
-        background-color: transparent;
-        transition: 0.2s ease-in-out;
-
-        & svg {
-          width: 100%;
-          height: 100%;
-        }
+      & svg {
+        width: 100%;
+        height: 100%;
       }
+    }
 
-      & button:hover {
-        color: var(--clr-primary);
-      }
+    button.menu:hover {
+      color: var(--clr-primary);
+    }
+
+    .menu-list {
+      position: absolute;
+      bottom: 0;
+      transform: translate(-40px, 100%);
+      padding: 3rem;
+      text-align: center;
+      width: 110vw;
+      background-image: linear-gradient(
+          to right bottom,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
+        ),
+        url('/src/assets/images/menu-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 999;
 
       & ul {
-        position: absolute;
         display: flex;
         flex-direction: column;
-        gap: 1.25rem;
+        align-items: center;
+        gap: 2rem;
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+
+        li a {
+          text-decoration: none;
+          font-weight: 600;
+          letter-spacing: 1.5px;
+          color: #fff;
+          transition: 0.2s ease-in-out;
+        }
+
+        li a:hover {
+          color: var(--clr-primary);
+        }
       }
     }
 
@@ -149,9 +183,14 @@ const Nav = styled.nav`
       .nav-list-container {
         display: none;
       }
+    }
 
-      .menu-container {
-        display: block;
+    @media (min-width: 1040px) {
+      .menu {
+        display: none;
+      }
+      .menu-list {
+        display: none;
       }
     }
   }
