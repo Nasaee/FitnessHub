@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import SectionTitle from './SectionTitle';
-import { features } from '../utils';
+import { benefits } from '../utils';
 
-const Features = () => {
+const Benefits = () => {
   return (
-    <Section id='features'>
+    <Section>
       <div className='features'>
         <SectionTitle
           titleHeader='Benefits of Fitness App'
@@ -21,7 +21,7 @@ const Features = () => {
       </div>
       <div className='features-provider'>
         <ul>
-          {features.map((feature, i) => {
+          {benefits.map((feature, i) => {
             const { icon, title, description } = feature;
             return (
               <li key={i}>
@@ -38,7 +38,7 @@ const Features = () => {
     </Section>
   );
 };
-export default Features;
+export default Benefits;
 
 const Section = styled.section`
   .features {

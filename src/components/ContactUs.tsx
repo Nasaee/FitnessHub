@@ -5,7 +5,7 @@ import userImages from '../assets/images/contact-us';
 
 const ContactUs = () => {
   return (
-    <Section>
+    <Section id='about'>
       <div className='center'>
         <SectionTitleMid
           titleHeader='Our Trainer'
