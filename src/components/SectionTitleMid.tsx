@@ -3,12 +3,14 @@ import styled from 'styled-components';
 type TitleProp = {
   titleHeader: string;
   titleHeightlight: string;
+  titleFront?: string;
   title?: string;
   titleBottom?: string;
 };
 
 const SectionTitleMid = ({
   titleHeader,
+  titleFront,
   titleHeightlight,
   title,
   titleBottom,
@@ -20,6 +22,7 @@ const SectionTitleMid = ({
         {titleHeader}
       </p>
       <h2>
+        {titleFront && <span className='title-front'>{titleFront}</span>}
         <span className='heigtlight'>{titleHeightlight}</span>&nbsp;
         <span>{title}</span>
         <br />
@@ -53,7 +56,11 @@ const Wrapper = styled.div`
     line-height: normal;
     letter-spacing: 0.0075rem;
 
-    & span:first-child {
+    .title-front {
+      margin-right: 4px;
+    }
+
+    & span.heigtlight {
       color: var(--clr-primary);
       font-family: var(--font-2);
     }

@@ -4,7 +4,7 @@ import { FaRegStar } from 'react-icons/fa';
 import { FaSignal } from 'react-icons/fa6';
 import { MdOutlineTimer } from 'react-icons/md';
 import { PiUsersThreeLight } from 'react-icons/pi';
-import useFormatPrice from '../hook/useFormatPrice';
+import { useFormatPrice } from '../hook';
 
 const Card = ({ feature }: { feature: TFeature }) => {
   const {
@@ -70,6 +70,12 @@ const Wrapper = styled.div`
   border-radius: 0.3125rem 0.3125rem 0rem 0rem;
   overflow: hidden;
   box-shadow: var(--shadow-1);
+  transition: var(--transition);
+
+  &:hover {
+    box-shadow: var(--shadow-2);
+    transform: scale(1.05);
+  }
 
   .detail {
     height: 50%;

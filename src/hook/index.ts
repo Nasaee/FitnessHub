@@ -5,4 +5,4 @@ const useFormatPrice = (price: number) => {
   }).format(price);
 };
 
-export default useFormatPrice;
+export { useFormatPrice };
