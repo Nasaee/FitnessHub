@@ -3,7 +3,6 @@ import { blogAndNews } from '../utils';
 import { nanoid } from 'nanoid';
 import { AiOutlineUser } from 'react-icons/ai';
 import { PiCalendarThin } from 'react-icons/pi';
-import Cta from './Cta';
 
 const BlogAndNews = () => {
   return (
@@ -42,8 +41,6 @@ const BlogAndNews = () => {
           );
         })}
       </ul>
-
-      <Cta />
     </Section>
   );
 };
@@ -51,7 +48,6 @@ export default BlogAndNews;
 
 const Section = styled.section`
   padding: 1.5rem;
-  position: relative;
 
   .section-title {
     font-family: var(--font-secondary);

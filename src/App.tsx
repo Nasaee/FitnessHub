@@ -9,21 +9,25 @@ import Featured from './components/Featured';
 import Testimomials from './components/Testimomials';
 import PersonalTrainer from './components/PersonalTrainer';
 import BlogAndNews from './components/BlogAndNews';
+import Footer from './components/Footer';
 function App() {
   return (
-    <main className='App'>
-      <Navbar />
-      <Hero />
-      <TextSlide />
-      <Benefits />
-      <ContactUs />
-      <HowItWork />
-      <Featured />
-      <TextSlide />
-      <Testimomials />
-      <PersonalTrainer />
-      <BlogAndNews />
-    </main>
+    <>
+      <main className='App'>
+        <Navbar />
+        <Hero />
+        <TextSlide />
+        <Benefits />
+        <ContactUs />
+        <HowItWork />
+        <Featured />
+        <TextSlide />
+        <Testimomials />
+        <PersonalTrainer />
+        <BlogAndNews />
+      </main>
+      <Footer />
+    </>
   );
 }
 export default App;
