@@ -24,6 +24,8 @@ import {
   mary_jones,
 } from '../assets/images/testimonials';
 
+import { img1, img2, img3 } from '../assets/images/blog&news';
+
 type TNavLink = { name: string; href: string };
 export type TFeature = {
   imgUrl: string;
@@ -44,6 +46,14 @@ export type TTestimonials = {
   userName: string;
   title: string;
   comment: string;
+};
+
+type TBlogAndNews = {
+  imgUrl: string;
+  category: string;
+  title: string;
+  auther: string;
+  date: string;
 };
 
 export const navLinks: TNavLink[] = [
@@ -119,7 +129,7 @@ export const features: TFeature[] = [
     activityAmount: 12,
     activityDuration: { hr: 1, min: 30 },
     users: 15000,
-    trainer: 'Alice',
+    trainer: 'Alice Gray',
     trainerImgUrl: trainer5,
   },
   {
@@ -132,7 +142,7 @@ export const features: TFeature[] = [
     activityAmount: 12,
     activityDuration: { hr: 1, min: 30 },
     users: 15000,
-    trainer: 'Bob',
+    trainer: 'Bob Brown',
     trainerImgUrl: trainer1,
   },
   {
@@ -145,7 +155,7 @@ export const features: TFeature[] = [
     activityAmount: 12,
     activityDuration: { hr: 1, min: 30 },
     users: 15000,
-    trainer: 'Helena',
+    trainer: 'Helena Swift',
     trainerImgUrl: trainer3,
   },
   {
@@ -158,7 +168,7 @@ export const features: TFeature[] = [
     activityAmount: 12,
     activityDuration: { hr: 1, min: 30 },
     users: 15000,
-    trainer: 'Alice',
+    trainer: 'Alice Gray',
     trainerImgUrl: trainer5,
   },
   {
@@ -171,7 +181,7 @@ export const features: TFeature[] = [
     activityAmount: 12,
     activityDuration: { hr: 1, min: 30 },
     users: 15000,
-    trainer: 'Bob',
+    trainer: 'Bob Brown',
     trainerImgUrl: trainer1,
   },
   {
@@ -184,7 +194,7 @@ export const features: TFeature[] = [
     activityAmount: 12,
     activityDuration: { hr: 1, min: 30 },
     users: 15000,
-    trainer: 'Helena',
+    trainer: 'Helena Swift',
     trainerImgUrl: trainer3,
   },
 ];
@@ -224,5 +234,29 @@ export const testimonials: TTestimonials[] = [
     title: 'Satisfied Trainee',
     comment:
       'Risus sed vulputate odio ut enim blandit. Sapien pellentesque habitant morbi tristique senectus et netus et. Sit amet facilisis magna etiam tempor orci eu.',
+  },
+];
+
+export const blogAndNews: TBlogAndNews[] = [
+  {
+    imgUrl: img1,
+    category: 'GYM',
+    title: 'Gym Essentials: Your Path to Fitness Success',
+    auther: 'Admin',
+    date: '23 Sep 2023',
+  },
+  {
+    imgUrl: img2,
+    category: 'GYM',
+    title: 'Gym Essentials: Your Path to Fitness Success',
+    auther: 'Admin',
+    date: '23 Sep 2023',
+  },
+  {
+    imgUrl: img3,
+    category: 'GYM',
+    title: 'Gym Essentials: Your Path to Fitness Success',
+    auther: 'Admin',
+    date: '23 Sep 2023',
   },
 ];

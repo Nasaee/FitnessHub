@@ -3,6 +3,8 @@ import SectionTitleMid from './SectionTitleMid';
 import { nanoid } from 'nanoid';
 import { testimonials } from '../utils';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { PiQuotesFill } from 'react-icons/pi';
+import { CiStar } from 'react-icons/ci';
 import { useEffect, useState } from 'react';
 
 type TSliderPosition = 'activeSlide' | 'nextSlide' | 'prevSlide';
@@ -49,18 +51,40 @@ const Testimomials = () => {
         {testimonials.map((item, itemIndex) => {
           const { userImg, userName, title, comment } = item;
           return (
-            <li key={nanoid()} className={setSliderPosition(itemIndex)}>
+            <li
+              key={nanoid()}
+              className={`testimonial ${setSliderPosition(itemIndex)}`}
+            >
               <img src={userImg} alt={userName} />
               <h4>{userName}</h4>
               <h5>{title}</h5>
-              <p>{comment}</p>
+              <p className='rating'>
+                <CiStar />
+                <CiStar />
+                <CiStar />
+                <CiStar />
+                <CiStar />
+              </p>
+              <div className='comment-container'>
+                <p>{comment}</p>
+                <PiQuotesFill className='quote quote-top' />
+                <PiQuotesFill className='quote quote-bottom' />
+              </div>
             </li>
           );
         })}
-        <button type='button' className='btn btn-prev'>
+        <button
+          type='button'
+          className='btn btn-prev'
+          onClick={() => setIndex(index - 1)}
+        >
           <IoIosArrowBack />
         </button>
-        <button type='button' className='btn btn-next'>
+        <button
+          type='button'
+          className='btn btn-next'
+          onClick={() => setIndex(index + 1)}
+        >
           <IoIosArrowForward />
         </button>
       </ul>
@@ -80,7 +104,7 @@ const Section = styled.section`
     height: 20rem;
     position: relative;
 
-    & li {
+    & li.testimonial {
       position: absolute;
       top: 0;
       left: 0;
@@ -96,6 +120,7 @@ const Section = styled.section`
       & img {
         width: 10rem;
         height: 10rem;
+        object-fit: cover;
         border-radius: 50%;
         position: absolute;
         top: 0;
@@ -106,7 +131,7 @@ const Section = styled.section`
       & h4 {
         color: #000;
         text-align: center;
-        font-size: 1.25rem;
+        font-size: clamp(0.8rem, 1.5vw, 1.25rem);
         font-weight: 600;
         margin-top: 4rem;
         letter-spacing: 0.00625rem;
@@ -121,14 +146,43 @@ const Section = styled.section`
         margin-top: 0.94rem;
       }
 
-      & p {
-        color: #52525b;
-        font-family: var(--font-secondary);
-        text-align: center;
-        font-size: clamp(0.75rem, 1.5vw, 1.25rem);
-        font-weight: 400;
-        line-height: 2.125rem;
-        padding: 2rem;
+      .rating {
+        display: flex;
+        margin-top: 1rem;
+        color: #fbbc05;
+        font-size: 1.5rem;
+      }
+
+      .comment-container {
+        position: relative;
+
+        & p {
+          color: #52525b;
+          font-family: var(--font-secondary);
+          text-align: center;
+          font-size: clamp(0.75rem, 1.5vw, 1.25rem);
+          font-weight: 400;
+          line-height: 2.125rem;
+          padding: 2rem;
+        }
+
+        .quote {
+          position: absolute;
+          font-size: 5rem;
+          color: rgba(0, 0, 0, 0.089);
+          z-index: -1;
+        }
+
+        .quote-top {
+          top: -4rem;
+          left: 3rem;
+          transform: rotateY(180deg);
+        }
+
+        .quote-bottom {
+          bottom: -4rem;
+          right: 2rem;
+        }
       }
     }
 
@@ -149,6 +203,7 @@ const Section = styled.section`
       transform: translateY(-50%);
       background-color: transparent;
       border: transparent;
+      cursor: pointer;
 
       & svg {
         width: 3rem;
@@ -157,12 +212,33 @@ const Section = styled.section`
       }
     }
 
+    .btn:hover svg {
+      color: var(--clr-primary);
+    }
+
     .btn.btn-prev {
       left: 0;
     }
 
     .btn.btn-next {
       right: 0;
+    }
+  }
+
+  @media (max-width: 725px) {
+    & img {
+      width: 6rem;
+      height: 6rem;
+    }
+    & h4 {
+      margin-top: 2rem;
+    }
+
+    .comment-container p {
+      padding: 1rem;
+    }
+    .quote {
+      font-size: 3rem !important;
     }
   }
 `;

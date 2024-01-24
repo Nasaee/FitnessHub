@@ -7,6 +7,8 @@ import Navbar from './components/Navbar';
 import TextSlide from './components/TextSlide';
 import Featured from './components/Featured';
 import Testimomials from './components/Testimomials';
+import PersonalTrainer from './components/PersonalTrainer';
+import BlogAndNews from './components/BlogAndNews';
 function App() {
   return (
     <main className='App'>
@@ -19,6 +21,8 @@ function App() {
       <Featured />
       <TextSlide />
       <Testimomials />
+      <PersonalTrainer />
+      <BlogAndNews />
     </main>
   );
 }
