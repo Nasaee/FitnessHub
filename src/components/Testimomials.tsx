@@ -18,12 +18,12 @@ const Testimomials = () => {
     if (index > lastIndex) setIndex(0);
   }, [index]);
 
-  useEffect(() => {
-    const slider = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 4000);
-    return () => clearInterval(slider);
-  }, [index]);
+  // useEffect(() => {
+  //   const slider = setInterval(() => {
+  //     setIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  //   }, 4000);
+  //   return () => clearInterval(slider);
+  // }, [index]);
 
   const setSliderPosition: TSetSliderPosition = (itemIndex) => {
     let position: TSliderPosition = 'nextSlide';
@@ -101,7 +101,7 @@ const Section = styled.section`
     margin-inline: auto;
     margin-top: 8rem;
     width: 100%;
-    height: 20rem;
+    height: 25rem;
     position: relative;
 
     & li.testimonial {
@@ -225,10 +225,26 @@ const Section = styled.section`
     }
   }
 
-  @media (max-width: 725px) {
+  @media (max-width: 580px) {
     & img {
-      width: 6rem;
-      height: 6rem;
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .comment-container {
+      & p {
+        padding: 1rem !important;
+      }
+    }
+  }
+
+  @media (max-width: 725px) {
+    ul {
+      height: 30rem;
+    }
+    & img {
+      width: 3rem;
+      height: 3rem;
     }
     & h4 {
       margin-top: 2rem;
