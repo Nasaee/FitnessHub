@@ -28,7 +28,6 @@ const Cta = () => {
 export default Cta;
 
 const Section = styled.section`
-  max-width: 64.0625rem;
   text-align: center;
   padding: 2.62rem;
   background-color: var(--clr-primary);
@@ -66,5 +65,37 @@ const Section = styled.section`
     justify-content: center;
     gap: 1.19rem;
     margin-top: 2.5rem;
+  }
+
+  @media (max-width: 780px) {
+    .top {
+      font-size: 1rem;
+    }
+
+    .cta-text {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 574px) {
+    & {
+      padding: 1.5rem;
+    }
+    .top {
+      font-size: 0.9rem;
+    }
+
+    .cta-text {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .cta-text {
+      margin-top: 0.9rem;
+    }
+
+    .store {
+      margin-top: 1.2rem;
+    }
   }
 `;

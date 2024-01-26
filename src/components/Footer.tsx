@@ -91,7 +91,28 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className='copyright'></div>
+      </div>
+      <div className='copyright-container'>
+        <p className='copyright'>
+          <span>
+            Copyright &copy; {new Date().getFullYear()}. All Rights Reserved by
+          </span>
+          <span className='brand'>Fitness Hub</span>
+        </p>
+        <div className='design-and-code'>
+          <p>
+            <span>Design by </span>
+            <span className='emphasize'>
+              <a href='https://www.figma.com/file/HRnOyRZELoYHBoLJov05i0/Fitness-Website-Landing-Page-(Community)?node-id=13%3A14307&mode=dev'>
+                Figma Community
+              </a>
+            </span>
+          </p>
+          <p>
+            <span>, Code by </span>
+            <span className='emphasize'>Nasaee Madadam</span>
+          </p>
+        </div>
       </div>
     </Wrapper>
   );
@@ -101,18 +122,21 @@ export default Footer;
 const Wrapper = styled.footer`
   background: #2b2b2b;
   position: relative;
-  padding: 16rem 2rem 3rem 2rem;
+  padding-top: 16rem;
 
   .cta {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 64.0625rem;
   }
 
   .center {
     max-width: 1280px;
     margin-inline: auto;
+    padding-bottom: 3rem;
 
     .content {
       display: flex;
@@ -253,6 +277,58 @@ const Wrapper = styled.footer`
             border: transparent;
             cursor: pointer;
           }
+        }
+      }
+    }
+  }
+
+  .copyright-container {
+    background-color: #fff;
+    padding: 1rem;
+    text-align: center;
+    letter-spacing: 0.6px;
+
+    p.copyright {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      color: #6c6c6c;
+      text-align: center;
+      font-family: var(--font-secondary);
+      font-size: 0.975rem;
+      font-weight: 400;
+      line-height: 1.375rem;
+
+      & span.brand {
+        color: var(--clr-primary);
+        font-weight: 600;
+      }
+    }
+
+    .design-and-code {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 8px;
+      margin-top: 1rem;
+      font-size: 0.975rem;
+      font-weight: 600;
+      color: #6c6c6ce2;
+      letter-spacing: 1px;
+
+      & span.emphasize {
+        color: #4263eb;
+        font-weight: 700;
+
+        & a {
+          text-decoration: none;
+        }
+
+        & a:active,
+        a:visited {
+          color: #4263eb;
         }
       }
     }

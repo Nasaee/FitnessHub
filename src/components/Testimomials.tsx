@@ -226,6 +226,9 @@ const Section = styled.section`
   }
 
   @media (max-width: 580px) {
+    & {
+      padding: 1rem;
+    }
     & img {
       width: 4rem;
       height: 4rem;
@@ -233,7 +236,7 @@ const Section = styled.section`
 
     .comment-container {
       & p {
-        padding: 1rem !important;
+        padding: 1.2rem !important;
       }
     }
   }
@@ -255,6 +258,12 @@ const Section = styled.section`
     }
     .quote {
       font-size: 3rem !important;
+    }
+  }
+
+  @media (max-width: 428px) {
+    li {
+      padding: 1.5rem !important;
     }
   }
 `;
