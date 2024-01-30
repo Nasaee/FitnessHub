@@ -40,7 +40,7 @@ const Testimomials = () => {
   };
 
   return (
-    <Section>
+    <Section id='testimonials'>
       <SectionTitleMid
         titleHeader='Testimonials'
         titleFront='Our Featured'

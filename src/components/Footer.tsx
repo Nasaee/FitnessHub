@@ -4,6 +4,7 @@ import { BiLogoTwitter } from 'react-icons/bi';
 import { GrFacebookOption, GrInstagram, GrGithub } from 'react-icons/gr';
 import { IoMailOutline } from 'react-icons/io5';
 import Cta from './Cta';
+import { nanoid } from 'nanoid';
 
 const Footer = () => {
   const companyLinks = [
@@ -64,7 +65,7 @@ const Footer = () => {
             <h5>Company</h5>
             <ul className='links'>
               {companyLinks.map((link) => {
-                return <li>{link}</li>;
+                return <li key={link}>{link}</li>;
               })}
             </ul>
           </div>
@@ -72,7 +73,7 @@ const Footer = () => {
             <h5>Help</h5>
             <ul className='links'>
               {helpLinks.map((link) => {
-                return <li>{link}</li>;
+                return <li key={nanoid}>{link}</li>;
               })}
             </ul>
           </div>
@@ -143,6 +144,7 @@ const Wrapper = styled.footer`
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 3rem;
+      padding-inline: 2rem;
 
       .social {
         width: 13rem;

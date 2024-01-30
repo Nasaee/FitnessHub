@@ -61,7 +61,7 @@ export const navLinks: TNavLink[] = [
   { name: 'Features', href: '#features' },
   { name: 'How it Works', href: '#how-it-works' },
   { name: 'About Us', href: '#about' },
-  { name: 'Testimonial', href: '#testimonial' },
+  { name: 'Testimonial', href: '#testimonials' },
   { name: 'Blog', href: '#blog' },
 ];
 

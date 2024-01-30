@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import SectionTitleMid from './SectionTitleMid';
 import Button from './Button';
 import userImages from '../assets/images/contact-us';
+import { nanoid } from 'nanoid';
 
 const ContactUs = () => {
   return (
@@ -24,7 +25,12 @@ const ContactUs = () => {
             <Button>Get Started</Button>
           </div>
           {userImages.map((image, i) => (
-            <img src={image} alt='user image' className={`user user${i}`} />
+            <img
+              key={nanoid()}
+              src={image}
+              alt='user image'
+              className={`user user${i}`}
+            />
           ))}
         </div>
       </div>

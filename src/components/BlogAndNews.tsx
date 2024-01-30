@@ -6,7 +6,7 @@ import { PiCalendarThin } from 'react-icons/pi';
 
 const BlogAndNews = () => {
   return (
-    <Section>
+    <Section id='blog'>
       <div className='section-title'>
         <p>
           <span className='dash'>-</span>
