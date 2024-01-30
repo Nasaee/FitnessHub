@@ -73,7 +73,7 @@ const Footer = () => {
             <h5>Help</h5>
             <ul className='links'>
               {helpLinks.map((link) => {
-                return <li key={nanoid}>{link}</li>;
+                return <li key={nanoid()}>{link}</li>;
               })}
             </ul>
           </div>
